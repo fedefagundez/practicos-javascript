@@ -11,7 +11,11 @@ function acumular() {
 
     if (numero < 0) {
         suma += -Number(numero);
+    } else {
+        suma += Number(numero);
     }
+
+    document.querySelector("#valor").value = "";
 
     cont++;
 
