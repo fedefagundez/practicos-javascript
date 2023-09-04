@@ -8,8 +8,8 @@ function calcularPrecio() {
   let existeErrores = false;
   let mensaje = "";
   const p = document.querySelector("p");
-  let precio = 80;
-  let total = 0;
+  let precioPorEntrada = 80;
+  let precioTotal = 0;
 
   p.innerHTML = "";
 
@@ -39,19 +39,19 @@ function calcularPrecio() {
   if (!existeErrores) {
     // Precio según tipo de función
     if (tipoFuncion === "3d") {
-      precio = precio + 20;
+      precioPorEntrada = precioPorEntrada + 20;
     } else if (tipoFuncion === "4d") {
-      precio = precio + 60;
+      precioPorEntrada = precioPorEntrada + 60;
     }
 
     // Precio según franja horaria
     if (franjaHoraria === "tarde") {
-      precio = precio * 1.1;
+      precioPorEntrada = precioPorEntrada * 1.1;
     } else if (franjaHoraria === "noche") {
-      precio = precio * 1.22;
+      precioPorEntrada = precioPorEntrada * 1.22;
     }
-    total = precio * cantEntradas;
-    mensaje = `El precio por ${cantEntradas} entradas es $${total.toFixed(2)}`;
+    precioTotal = precioPorEntrada * cantEntradas;
+    mensaje = `El precio por ${cantEntradas} entradas es <b>$${precioTotal.toFixed(2)}</b>`;
 
     document.querySelector("#totalEntradas").value = "";
     document.querySelector("#cantEntradas").value = "";
