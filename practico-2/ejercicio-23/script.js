@@ -12,12 +12,12 @@ document.querySelector("button").addEventListener("click", informar);
 function informar () {
     const nota = Number(document.querySelector("#nota").value);
 
-    suma += nota;
-
-    if(cont === 0){
+    if(suma === 0){
         maximo = nota;
         minimo = nota;
     }
+
+    suma += nota;
     
     if(maximo < nota){
         maximo = nota;
@@ -35,9 +35,7 @@ function informar () {
         contadorPerdidos++;
     }
 
-    cont++;
-
-    promedio = (suma / cont).toFixed(2);
+    promedio = (suma / (contadorSalvados + contadorBuenaNota)).toFixed(2);
 
     document.querySelector("p").innerHTML = `
         Salvaron: ${contadorSalvados} estudiantes <br>
