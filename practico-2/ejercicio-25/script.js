@@ -2,6 +2,7 @@ document.querySelector("button").addEventListener("click", procesar);
 
 let stock = 0;
 let parrafo = document.querySelector("p");
+let cantidadPedidos = 0;
 
 function procesar() {
     const stockAuxiliar = document.querySelector("#stock").value;
@@ -14,7 +15,7 @@ function procesar() {
     if(stock === 0 && stockAuxiliar !== ""){
         stock = stockAuxiliar;
         mensaje = "Comience a ingresar los pedidos..."
-    } else {
+    } else if (nombreCliente !== "" && cantidadPiezas !== ""){
         if(cantidadPiezas <= stock){
             stock -= cantidadPiezas;  
             cantidadPedidos++;
