@@ -2,7 +2,6 @@ document.querySelector("button").addEventListener("click", procesar);
 
 let stock = 0;
 let parrafo = document.querySelector("p");
-let cantidadPedidos = 0;
 
 function procesar() {
     const stockAuxiliar = document.querySelector("#stock").value;
@@ -12,14 +11,14 @@ function procesar() {
     let nombreDelClientePedidoMaximo = "";
     let mensaje = "";
 
-    if(stock === 0){
+    if(stock === 0 && stockAuxiliar !== ""){
         stock = stockAuxiliar;
         mensaje = "Comience a ingresar los pedidos..."
     } else {
         if(cantidadPiezas <= stock){
-            stock -= cantidadPiezas;
+            stock -= cantidadPiezas;  
             cantidadPedidos++;
-            document.querySelector("#stock").value = stock;
+            document.querySelector("#stock").value = stock; 
             mensaje = "Operación realizada con éxito."
         } else {
             mensaje = "El stock no es suficiente."
