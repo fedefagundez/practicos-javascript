@@ -1,18 +1,13 @@
 document.querySelector("#btnBoton").addEventListener("click", paraCeliacos);
 
 function paraCeliacos(){
-    const nombreReceta = document.querySelector("#txtNombreDeLaReceta").value;
-    const ingredientes = document.querySelector("#txtIngredientes").value.toUpperCase();
-    let esParaCeliacos = true;
+    const nombrePelicula = document.querySelector("#txtNombreDeLaPelicula").value;
+    const caracteristicas = document.querySelector("#txtCaracteristicas").value.toUpperCase();
     let mensaje = '';
 
-    if(
-        ingredientes.indexOf("TRIGO") >= 0 ||
-        ingredientes.indexOf("CENTENO") >= 0 ||
-        ingredientes.indexOf("CEVADA") >= 0 ||
-        ingredientes.indexOf("AVENA") >= 0
-    ){
-        esParaCeliacos = false;
+    if(caracteristicas.indexOf("REFERENCIAS O CONTENIDO SEXUAL") >= 0 ||
+    ) {
+
     }
 
    
