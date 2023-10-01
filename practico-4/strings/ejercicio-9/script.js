@@ -82,9 +82,6 @@ function validarContraseña() {
     mensaje += `<li>Debe tener al menos un de estos carácteres: ".", "@", "#" ó "!" </li>`;
   }
 
-  console.log(`Cantidad de minúsuclas: ${cantMinusculas}`);
-  console.log(`Cantidad de mayúsuclas: ${cantMayusculas}`);
-
   if (!tieneErrores) {
     parrafo.innerHTML = `La contraseña es: ${contraseña}`;
   } else {
