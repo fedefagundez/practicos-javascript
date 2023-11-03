@@ -47,7 +47,7 @@ class Pelicula {
 
   validarPelicula() {
     let validar = false;
-    if (!isNaN(this.anio) && noExisteRegistro(this.nombre)) {
+    if (!isNaN(this.anio) || !noExisteRegistro(this.nombre)) {
       validar = true;
     }
     return validar;
@@ -64,7 +64,7 @@ function agregarPelicula() {
   const cantVotantes = document.getElementById("txtCantVotantes").value;
   const votos = document.getElementById("txtVotos").value;
 
-  const pelicula = new Pelicula(nombre, anio, cantVotantes, votos);
+  const pelicula = new Pelicula(nombre, anio, votos, cantVotantes);
 
   document.getElementById("pMensajes").innerHTML = "";
   if (pelicula.validarPelicula()) {
@@ -96,6 +96,7 @@ function mostrarTabla() {
   contenido += "<tbody>";
 
   for (let i = 0; i < peliculas.length; i++) {
+    console.log("i:", i, "valor:", peliculas[i].votos / peliculas[i].cantVotantes);
     if (peliculas[i].votos / peliculas[i].cantVotantes >= 4) {
       contenido += "<tr>";
       contenido += `<td>${peliculas[i].nombre}</td>`;
